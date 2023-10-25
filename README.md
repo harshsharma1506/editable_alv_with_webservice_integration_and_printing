@@ -1,8 +1,15 @@
 # editable_alv_with_webservice_integration_and_printing
 
 SAP PP planned orders ALV with printing facility integration with microsoft 
+
+Technical - 
 Language - ABAP 
-OOPS , Procedural , SY-UCOMM facility , webservice and proxy 
+OOPS , Procedural , SY-UCOMM facility , webservice and proxy . 
+
+Functional - 
+BOM exploseion 
+Routing Read 
+Routing Long Text 
 
 ## Selection screen - 
 
@@ -23,7 +30,8 @@ OOPS , Procedural , SY-UCOMM facility , webservice and proxy
 
 ## Webservice Printer Output - 
 
-![image](https://github.com/harrycodeswhileworldsleeps/editable_alv_with_webservice_integration_and_printing/assets/94862735/0a9a7fe6-1672-482c-9bb0-a9b0adcd6299)
+![image](https://github.com/harrycodeswhileworldsleeps/editable_alv_with_webservice_integration_and_printing/assets/94862735/b2d39143-d50d-4fb0-8880-50af25397baa)
+
 
 
 
