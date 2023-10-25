@@ -3,7 +3,7 @@ tables: mara, plaf, mapl.
 
 include z_sel_screen.
 include z_p_pp_cls.
-include z_/p_pp_forms.
+include z_p_pp_forms.
 
 *-----> at selection screen validate authorization
 
