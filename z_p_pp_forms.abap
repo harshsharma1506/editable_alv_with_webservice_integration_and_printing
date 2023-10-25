@@ -118,7 +118,32 @@ include z_p_pp_forms.
 *-----> validation of ALV screen inputs
 
      case ucomm.
-       when '&DATA_SAVE'.
+       when '&SAVE'.
+         data : ref_grid type ref to cl_gui_alv_grid. "new
+
+         if ref_grid is initial.
+           call function 'GET_GLOBALS_FROM_SLVC_FULLSCR'
+             importing
+               e_grid = ref_grid.
+         endif.
+
+         if not ref_grid is initial.
+           call method ref_grid->check_changed_data.
+         endif.
+
+         "now at this time you have modified internal table
+
+* refresh the ALV Grid output from internal table
+         selfield-refresh = c_check.
+     endcase.
+
+     case ucomm.
+       when '&REFR'.
+         refresh g_it_final.
+         clear g_wa_final.
+         call method lcl_mcs_report=>get_data.
+
+       when '&PRINT'.
          clear g_wa_final.
          loop at g_it_final into g_wa_final.
            if g_wa_final-plan_check is not initial.
@@ -132,7 +157,7 @@ include z_p_pp_forms.
            endif.
          endloop.
          if lines( lt_check ) > 1.
-           message 'Please select only 1 line' type 'I' display like 'E'.
+           message 'Please select only 1 line' type 'E' display like 'I'.
          endif.
 
 *-----> FM Call ( BOM explode )
@@ -225,6 +250,7 @@ include z_p_pp_forms.
            endif.
          endif.
      endcase.
+
 
    endform.                    "user_command
 *&---------------------------------------------------------------------*
